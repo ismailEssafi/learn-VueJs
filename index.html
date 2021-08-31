@@ -12,7 +12,13 @@
     <div id="vue_app"></div>
     <script>
       const app = Vue.createApp({
-            template : `<div>bonjour</div>`
+       data(){
+        return {
+            title : "vueJs cours"
+        }
+       },
+
+        template : `<div>{{title}}</div>`
         })
         app.mount('#vue_app')
     </script>
