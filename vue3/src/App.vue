@@ -3,7 +3,6 @@
   <p v-if="isVueJs">bonjour dans Vue.js</p>
   <p v-else-if="isVueJs === null">bonjour dans Angular</p>
   <p v-else>bonjour dans React</p>
-
 </template>
 
 <script>
@@ -17,3 +16,4 @@ export default ({
   }
 })
 </script>
+
