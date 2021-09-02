@@ -1,8 +1,10 @@
 <template>
   <div>{{title}}</div>
+  <span>{{number}}</span>
   <ul>
     <li v-for="names in freindz" v-bind:key="names">{{names.name}}</li>
-    <input v-bind:value="hero">
+    <input v-model="hero">
+    <button v-on:click="number++;hero='wonder woman'">submit</button>
   </ul>
 </template>
 
@@ -16,7 +18,8 @@ export default ({
         {name :'mostapha'},
         {name :'redwan'}
     ],
-      hero:"superman"
+      hero:"superman",
+      number: 0
     }
     
   }
