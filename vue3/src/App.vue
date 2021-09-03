@@ -1,15 +1,20 @@
 <template>
   <div>{{title}}</div>
-  <span>{{number}}</span>
   <ul>
     <li v-for="names in freindz" v-bind:key="names">{{names.name}}</li>
-    <input v-model="hero">
-    <button v-on:click="number++;hero='wonder woman'">submit</button>
+    <input v-model="freind">
+    <button v-on:click="addName">add nom</button>
   </ul>
 </template>
 
 <script>
 export default ({
+  methods: {
+    addName(){
+      this.freindz.push({name:this.freind});
+      this.freind=''
+    }
+  },
   data() {
     return{
       title: "hi world !",
@@ -18,7 +23,7 @@ export default ({
         {name :'mostapha'},
         {name :'redwan'}
     ],
-      hero:"superman",
+      freind:"",
       number: 0
     }
     
