@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title.list{
+    text-align:center;
+}
+.container ul li{
+    display: flex;
+    justify-content: space-between;
+}
+.container ul>input,.container ul>button{
+    margin-top:5px;
+}
