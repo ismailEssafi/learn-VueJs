@@ -40,10 +40,22 @@ export default {
             return new Date(this.currentYear,this.currentMonth,1).getDay();
         },
         next(){
-            this.currentMonth++ ;
+            if(this.currentMonth === 11){
+                this.currentMonth= 0;
+                this.currentYear++ ;
+            }else{
+                this.currentMonth++ ;
+            }
+            
         },
         prev(){
-            this.currentMonth--;
+            if(this.currentMonth === 0){
+                this.currentMonth= 11;
+                this.currentYear--;
+            }else{
+                this.currentMonth--;
+            }
+            
         }
 
     },
