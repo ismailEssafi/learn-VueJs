@@ -12,7 +12,8 @@
 
         <section class="days_numbre">
             <p v-for="num in startDay()" v-bind:key="num"></p>
-            <p v-for="num in numOfDays(currentYear,currentMonth)" v-bind:key="num">{{num}}</p>
+            <p v-for="num in numOfDays(currentYear,currentMonth)" v-bind:key="num"
+            v-bind:style="currentDate(num)">{{num}}</p>
         </section>
         
         <section class="next_prev">
@@ -56,8 +57,15 @@ export default {
                 this.currentMonth--;
             }
             
-        }
+        },
 
+        currentDate(num){
+            const dateNow= new Date().toDateString();
+            const date= new Date(this.currentYear,this.currentMonth,num).toDateString();
+            if(dateNow === date){
+                return "color:red;font-weight:600";
+            }
+        }
     },
 
     computed:{
