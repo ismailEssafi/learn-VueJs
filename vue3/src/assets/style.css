@@ -41,3 +41,10 @@
     width: 14.28%;
     text-align: center;
 }
+.month_year{
+    display:flex;
+    column-gap: 50px;
+}
+.month_year h3{
+    margin:0px;
+}
