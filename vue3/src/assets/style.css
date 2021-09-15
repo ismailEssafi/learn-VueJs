@@ -48,3 +48,8 @@
 .month_year h3{
     margin:0px;
 }
+.next_prev{
+    margin-top: 8px;
+    display: flex;
+    column-gap: 250px;
+}

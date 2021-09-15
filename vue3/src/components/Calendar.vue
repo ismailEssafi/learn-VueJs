@@ -14,6 +14,11 @@
             <p v-for="num in startDay()" v-bind:key="num"></p>
             <p v-for="num in numOfDays(currentYear,currentMonth)" v-bind:key="num">{{num}}</p>
         </section>
+        
+        <section class="next_prev">
+            <button v-on:click="prev">Prev</button>
+            <button v-on:click="next">Next</button>
+        </section>
     </diV>
 </template>
 
@@ -22,7 +27,6 @@ export default {
     data() {
         return{
         currentYear: new Date().toLocaleString("default",{year: "numeric"}),
-        currentMonthName: new Date().toLocaleString("default",{month: "long"}),
         currentMonth: new Date().getMonth(),
         days: ["Sun","Mon","Tus","Wed","Thu","Fri","Sat"],
         };
@@ -34,8 +38,20 @@ export default {
 
         startDay(){
             return new Date(this.currentYear,this.currentMonth,1).getDay();
+        },
+        next(){
+            this.currentMonth++ ;
+        },
+        prev(){
+            this.currentMonth--;
         }
 
+    },
+
+    computed:{
+        currentMonthName(){
+            return new Date(this.currentYear,this.currentMonth).toLocaleString("default",{month: "long"});
+        },
     }
 }
 </script>
