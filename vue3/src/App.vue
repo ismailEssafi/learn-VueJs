@@ -1,13 +1,13 @@
 <template>
 
-  <NameList />
+  <Calendar/>
 
 </template>
 
 <script>
-import NameList from "./components/NameList";
+import Calendar from "./components/Calendar";
 
 export default {
- components: { NameList },
+ components: {Calendar },
 };
 </script>

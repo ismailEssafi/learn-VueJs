@@ -13,3 +13,31 @@
 .container ul>input,.container ul>button{
     margin-top:5px;
 }
+.calendar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 27%;
+
+}
+.days_section{
+    display:flex;
+    justify-content: center;
+}
+.days_section p{
+    margin:7px 10px;
+    font-size: 20px;
+}
+.days_numbre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+.days_numbre p{
+    font-size: 18px;
+    margin: 8px 0px 1px 0px;
+    width: 14.28%;
+    text-align: center;
+}
