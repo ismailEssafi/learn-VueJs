@@ -1,13 +1,12 @@
 <template>
-
-  <Calendar/>
-
+  <HeaderApp/>
+  <router-view></router-view>
 </template>
 
 <script>
-import Calendar from "./components/Calendar";
+import HeaderApp from "./components/HeaderApp";
 
 export default {
- components: {Calendar },
+  components: {HeaderApp },
 };
 </script>

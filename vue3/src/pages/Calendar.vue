@@ -1,6 +1,6 @@
 <template>
     <div class="calendar">
-        <h1>Calendar</h1>
+        <h1>Vue Calendar</h1>
         <section class="month_year">
             <h3>{{currentMonthName}}</h3>
             <h3>{{currentYear}}</h3>
