@@ -12,7 +12,7 @@ export default {
   components: {HeaderApp,LoginModal },
   data(){
     return {
-      isOpen:false
+      isOpen:true
     }
   }
 };
