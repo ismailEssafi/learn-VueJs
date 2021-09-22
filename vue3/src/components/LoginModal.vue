@@ -4,14 +4,14 @@
             <div class="border">    
                 <div class="title-login">Login</div>
                 <div>
-                    <form>
+                    <form v-on:submit.prevent="submit">
                         <div class="input">
                             <label>Email or Username</label>
-                            <input type="text" placeholder="Enter your email or username">
+                            <input type="text" v-model="form.email" placeholder="Enter your email or username">
                         </div>
                         <div class="input">
                             <label>Password</label>
-                            <input type="password" placeholder="Enter your password">
+                            <input type="password" v-model="form.password" placeholder="Enter your password">
                         </div>
                         <button type="submit">Login</button>
                     </form>
@@ -21,10 +21,32 @@
 </template>
 
 <script>
+import firebase from '../utilities/firebase';
+
+
 export default {
     data(){
         return {
-            isOpen:true,
+            form :{
+                email: "",
+                password: ""
+            }
+        }
+    },
+    methods :{
+        submit(){
+
+            console.log(firebase);
+            const auth =firebase.default.getAuth();
+            console.log(auth)
+
+            // firebase.default.auth().signInWithEmailAndPassword(this.form.email,this.form.password)
+            // .then((res)=>{
+            //     console.log(res)
+            // })
+            // .catch((e)=>{
+            //     console.log(e)
+            // })
         }
     }
 
