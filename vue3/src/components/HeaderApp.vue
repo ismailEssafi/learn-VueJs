@@ -5,6 +5,33 @@
         <span><router-link to="/markdown">Markdown</router-link></span>
         <span><router-link to="/slider">Slider Carousel</router-link></span>
         <span v-on:click="$emit('open-login-modal')" style="color:white;cursor:pointer">Login</span>
+        <span v-on:click="logout" style="color:white;cursor:pointer">Logout</span>
     </div>
 </template>
+<script>
+import {initializeApp} from 'firebase/app';
+import { getAuth, signOut } from "firebase/auth";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDfTvgRsaEeHi3wd2b4_yj3y70BTpr7UUY",
+    authDomain: "vue3-ca3dd.firebaseapp.com",
+    projectId: "vue3-ca3dd",
+    storageBucket: "vue3-ca3dd.appspot.com",
+    messagingSenderId: "72372233867",
+    appId: "1:72372233867:web:1d74ed18d74ec69b35968e"
+};
+initializeApp(firebaseConfig);
+
+const auth =getAuth();
+export default {
+    methods:{
+        logout(){
+            signOut(auth)
+            .then(() => {})
+            .catch(() => {});
+        }
+    }
+
+}
+</script>
 

@@ -7,13 +7,29 @@
 <script>
 import HeaderApp from "./components/HeaderApp";
 import LoginModal from "./components/LoginModal.vue"
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+const auth = getAuth();
 
 export default {
   components: {HeaderApp,LoginModal },
   data(){
     return {
-      isOpen:false
+      isOpen:false,
+      isLoggedIn:false,
+      authUser :{}
     }
+  },
+  mounted(){
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+            this.isLoggedIn=true;
+            this.authUser=user;
+        } else {
+            this.isLoggedIn=false;
+            this.authUser={};
+        }
+      });
+
   }
 };
 </script>

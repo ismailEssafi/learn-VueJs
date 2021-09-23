@@ -13,7 +13,10 @@
                             <label>Password</label>
                             <input type="password" v-model="form.password" placeholder="Enter your password">
                         </div>
-                        <button type="submit">Login</button>
+                        <button type="submit">
+                            <span v-if="!isLoading">login</span>
+                            <span v-else>loading...</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -21,32 +24,32 @@
 </template>
 
 <script>
-import firebase from '../utilities/firebase';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-
+const auth = getAuth();
 export default {
     data(){
         return {
             form :{
                 email: "",
                 password: ""
-            }
+            },
+            isLoading:false
         }
     },
     methods :{
         submit(){
+            this.isLoading=true;
+            signInWithEmailAndPassword(auth,this.form.email,this.form.password)
+            .then((res)=>{
+                console.log(res);
+                this.isLoading=false;
+            })
+            .catch((e)=>{
+                console.log(e);
+                this.isLoading=false;
 
-            console.log(firebase);
-            const auth =firebase.default.getAuth();
-            console.log(auth)
-
-            // firebase.default.auth().signInWithEmailAndPassword(this.form.email,this.form.password)
-            // .then((res)=>{
-            //     console.log(res)
-            // })
-            // .catch((e)=>{
-            //     console.log(e)
-            // })
+            })
         }
     }
 
