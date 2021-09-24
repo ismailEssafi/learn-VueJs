@@ -6,7 +6,7 @@
     <li v-for="(names,index) in freindz" v-bind:key="names.name">
       <span>{{names.name}}</span><button v-on:click="remove_name(index)">x</button>
       </li>
-    <input v-model="freind">
+    <input v-model="freind" ref="nameListRef">
     <button v-on:click="addName">add nom</button><br>
   </ul>
 </div>
@@ -39,6 +39,9 @@
         freind:"",
         }
         
+    },
+    mounted(){
+      this.$refs.nameListRef.focus();
     }
   };
 </script>

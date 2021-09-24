@@ -7,7 +7,7 @@
                     <form v-on:submit.prevent="submit">
                         <div class="input">
                             <label>Email or Username</label>
-                            <input type="text" v-model="form.email" placeholder="Enter your email or username">
+                            <input type="text" v-model="form.email" ref="emailRef" placeholder="Enter your email or username">
                         </div>
                         <div class="input">
                             <label>Password</label>
@@ -41,8 +41,8 @@ export default {
         submit(){
             this.isLoading=true;
             signInWithEmailAndPassword(auth,this.form.email,this.form.password)
-            .then((res)=>{
-                console.log(res);
+            .then(()=>{
+                this.$emit('close-login')
                 this.isLoading=false;
             })
             .catch((e)=>{
@@ -51,6 +51,9 @@ export default {
 
             })
         }
+    },
+    mounted(){
+        this.$refs.emailRef.focus();
     }
 
 }

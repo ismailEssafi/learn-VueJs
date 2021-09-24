@@ -1,5 +1,5 @@
 <template>
-  <HeaderApp v-on:open-login-modal="isOpen=true"/>
+  <HeaderApp :isLoggedIn="isLoggedIn" v-on:open-login-modal="isOpen=true"/>
   <router-view></router-view>
   <LoginModal v-if="isOpen" v-on:close-login="isOpen=false"/>
 </template>
