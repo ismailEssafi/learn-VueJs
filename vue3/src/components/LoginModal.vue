@@ -3,7 +3,7 @@
         <div class="login">
             <div class="border">    
                 <div class="title-login">Login</div>
-                <div>
+                <GoogleLogin @close-login-google="$emit('close-login')"/>
                     <form v-on:submit.prevent="submit">
                         <div class="input">
                             <label>Email or Username</label>
@@ -13,21 +13,21 @@
                             <label>Password</label>
                             <input type="password" v-model="form.password" placeholder="Enter your password">
                         </div>
-                        <button type="submit">
+                        <button class="loginButton" type="submit">
                             <span v-if="!isLoading">login</span>
                             <span v-else>loading...</span>
                         </button>
                     </form>
-                </div>
             </div>
         </div>
 </template>
 
 <script>
+import GoogleLogin from './login/GoogleLogin';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
 const auth = getAuth();
 export default {
+    components:{GoogleLogin},
     data(){
         return {
             form :{
