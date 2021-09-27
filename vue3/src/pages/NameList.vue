@@ -13,35 +13,32 @@
 </template>
 
 <script>
+  import {ref,onMounted, computed} from 'vue';
   export default {
-    computed: {
-        name_Number() {
-        return this.freindz.length;
-        },
-    },
-    methods: {
-        addName(){
-        this.freindz.push({name:this.freind});
-        this.freind=''
-        },
-        remove_name(index){
-        this.freindz=this.freindz.filter((names,i)=> i !== index);
-        }
-    },
-    data() {
-        return{
-        title: "hi world  ",
-        freindz: [
+  
+    setup(){
+      const nameListRef =ref("");
+      const title= ref("hi world");
+      const freindz= ref([
             {name :'waldi'},
             {name :'mostapha'},
             {name :'redwan'}
-        ],
-        freind:"",
+        ]);
+      const freind= ref("");
+      const name_Number=computed({
+        get:()=> freindz.value.length
+      });
+      function addName(){
+        freindz.value.push({name:freind.value});
+        freind.value='';
         }
-        
-    },
-    mounted(){
-      this.$refs.nameListRef.focus();
+      function remove_name(index){
+        freindz.value=freindz.value.filter((names,i)=> i !== index);
+        }
+      onMounted(()=>{
+          nameListRef.value.focus();
+      })
+      return {title,freindz,freind,addName,remove_name,nameListRef,name_Number}
     }
   };
 </script>
