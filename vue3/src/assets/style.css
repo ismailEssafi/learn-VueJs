@@ -207,5 +207,36 @@ body{
     padding: 5px;
     border-radius: 8px;
 }
+.calulator{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 142px;
+    margin: auto;
+    row-gap: 14px;
+}
+.cal-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+}
+.cal-buttons button{
+    font-size: 20px;
+    font-family: Roboto;
+    padding: 7px 15px;
+    background-color: white;
+    border: 1px solid #0003;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px 0px #0000001a;
+    cursor: pointer;
+}
+.cal-buttons button:nth-child(10){
+    flex-grow: 1;
+}
+.cal-buttons button:active{
+    background-color: rgba(0, 0, 0, 0.13)
+}
 
 

@@ -4,12 +4,14 @@ import NameList from './pages/NameList'
 import Home from './pages/Home'
 import Markdown from './pages/Markdown'
 import Slider from './pages/Slider'
+import Calculator from './pages/Calculator.vue'
 const routes=[
     {path:'/',component:Home},
     {path:'/calendar',component:Calendar},
     {path:'/dc-hero',component:NameList},
     {path:'/markdown',component:Markdown},
-    {path:'/slider',component:Slider}
+    {path:'/slider',component:Slider},
+    {path:'/calculator',component:Calculator}
 
 ]
 
