@@ -3,8 +3,9 @@
         <span><router-link to="/calendar">Calendar</router-link></span>
         <span><router-link to="/dc-hero">DC Hero</router-link></span>
         <span><router-link to="/markdown">Markdown</router-link></span>
-        <span><router-link to="/slider">Slider Carousel</router-link></span>
+        <span><router-link to="/slider-carousel">Slider</router-link></span>
         <span><router-link to="/calculator">calculator</router-link></span>
+        <span><router-link to="/reuseable-model">Model</router-link></span>
         <span v-if="!isLoggedIn" v-on:click="$emit('open-login-modal')" style="color:white;cursor:pointer">Login</span>
         <span v-else v-on:click="logout" style="color:white;cursor:pointer">Logout</span>
     </div>
