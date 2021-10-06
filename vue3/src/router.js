@@ -6,6 +6,9 @@ import Markdown from './pages/Markdown'
 import Slider from './pages/Slider'
 import Calculator from './pages/Calculator.vue'
 import ReuseableModal from './pages/ReuseableModal'
+import Chat from './pages/Chat'
+
+
 const routes=[
     {path:'/',component:Home},
     {path:'/calendar',component:Calendar},
@@ -13,7 +16,8 @@ const routes=[
     {path:'/markdown',component:Markdown},
     {path:'/slider-carousel',component:Slider},
     {path:'/calculator',component:Calculator},
-    {path:'/reuseable-model',component:ReuseableModal}
+    {path:'/reuseable-model',component:ReuseableModal},
+    {path:'/chat',component:Chat}
 
 ]
 
