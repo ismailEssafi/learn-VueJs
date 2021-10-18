@@ -256,4 +256,24 @@ body{
     font-family:Roboto;
     margin-top: 10px;
 }
+.chats{
+    width: 25%;
+    margin: auto;
+    height: 60vh;
+}
+.chats h1{
+    text-align: center;
+}
+.chats :not(h1){
+    font-size:20px;
+}
+.message{
+    font-size: 20px;
+    width: 334px;
+    margin-left: 511px;
+    height: 33px;
+}
+.otherUser{
+    direction: rtl;
+}
 
